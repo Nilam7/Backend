@@ -59,32 +59,32 @@ public class CategoryDaoImpl implements CategoryDao{
 		}
 		return false;
 	}
-	/*public boolean getCategoryById(int id) {
+	public Category getCategoryById(int id) {
 		try
 		{
 			Session session=sessionFactory.getCurrentSession(); //hibernate
-			session.save(id);
-			return true;
+			Category cObj=session.get(Category.class,id);
+			return cObj;
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
 		
-		return false;
+		return null;
 	}
-	public Category update(Category obj) {
+	public boolean update(Category  obj) {
 		try
 		{
 			Session session=sessionFactory.getCurrentSession(); //hibernate
-			session.save(obj);
-			
+			session.update(obj);
+			return true;
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
-		return null;
-	}*/
+		return false;
+	}
 
 }
